@@ -38,7 +38,6 @@ except (dns.resolver.NXDOMAIN):
 print "SPF report for %s\n" % domain
 for rdata in answers:
 	for txt in rdata.strings:
-	print txt
 		if 'v=spf' in txt:
 			array = deque(txt.split(" "))
 			version = array.popleft()
