@@ -41,5 +41,9 @@ except (dns.resolver.NXDOMAIN):
 print "DMARC report for %s\n" % domain
 for rdata in answers:
 	for txt in rdata.strings:
-		print txt
+		(version, policy, aggregate_report, full_report) = deque(txt.split("; "))
+		print version
+		print policy
+		print aggregate_report
+		print full_report
 
